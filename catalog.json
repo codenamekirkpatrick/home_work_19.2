@@ -1,0 +1,57 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+        "name": "Арбуз",
+        "discription": "спелый арбуз из Краснодара",
+        "image": "products/photo/арбуз.jpg",
+        "category": 1,
+        "price": 150.0,
+        "created_at": "2024-09-08T14:48:25.069Z",
+        "updated_at": "2024-09-08T14:48:25.069Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Дыня",
+        "discription": "Спелая южная дыня",
+        "image": "products/photo/дыня.jpg",
+        "category": 1,
+        "price": 100.0,
+        "created_at": "2024-09-08T14:49:07.397Z",
+        "updated_at": "2024-09-08T14:49:07.397Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "Картофель",
+        "discription": "картофель мытый",
+        "image": "products/photo/картофель.jpg",
+        "category": 2,
+        "price": 50.0,
+        "created_at": "2024-09-08T14:49:37.677Z",
+        "updated_at": "2024-09-08T14:49:37.677Z"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Фрукты",
+        "description": "фрукты на развес"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Овощи",
+        "description": "Овощи на развес"
+    }
+}
+]

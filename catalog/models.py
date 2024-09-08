@@ -24,12 +24,11 @@ class Product(models.Model):
         help_text="Введите категорию продукта",
         blank=True,
         null=True,
-        related_name="products"
+        related_name="products",
     )
     price = models.FloatField(verbose_name="Цена", help_text="Введите цену продукта")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
 
     def __str__(self):
         return self.name
