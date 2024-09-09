@@ -7,7 +7,7 @@ class Product(models.Model):
         verbose_name="Наименование",
         help_text="Введите наименование продукта",
     )
-    discription = models.CharField(
+    description = models.CharField(
         max_length=200, verbose_name="Описание", help_text="Введите описание продукта"
     )
     image = models.ImageField(

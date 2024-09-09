@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "name": "Арбуз",
-        "discription": "спелый арбуз из Краснодара",
+        "description": "спелый арбуз из Краснодара",
         "image": "products/photo/арбуз.jpg",
         "category": 1,
         "price": 150.0,
@@ -17,7 +17,7 @@
     "pk": 2,
     "fields": {
         "name": "Дыня",
-        "discription": "Спелая южная дыня",
+        "description": "Спелая южная дыня",
         "image": "products/photo/дыня.jpg",
         "category": 1,
         "price": 100.0,
@@ -30,7 +30,7 @@
     "pk": 3,
     "fields": {
         "name": "Картофель",
-        "discription": "картофель мытый",
+        "description": "картофель мытый",
         "image": "products/photo/картофель.jpg",
         "category": 2,
         "price": 50.0,
