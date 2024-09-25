@@ -8,7 +8,9 @@ class Product(models.Model):
         help_text="Введите наименование продукта",
     )
     description = models.CharField(
-        max_length=200, verbose_name="Описание", help_text="Введите описание продукта"
+        max_length=200,
+        verbose_name="Описание",
+        help_text="Введите описание продукта"
     )
     image = models.ImageField(
         upload_to="catalog/photo",

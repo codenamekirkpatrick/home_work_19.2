@@ -1,7 +1,4 @@
-from django.conf import settings
-from django.conf.urls.static import static
-from django.urls import path, include
-from catalog.apps import CatalogConfig
+
 from catalog.views import HomePageView, ContactsView, ProductListView, ProductDetailView, ProductCreateView, ProductUpdateView, ProductDeleteView
 
 from django.urls import path
