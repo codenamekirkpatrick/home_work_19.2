@@ -11,7 +11,7 @@ class Product(models.Model):
         max_length=200, verbose_name="Описание", help_text="Введите описание продукта"
     )
     image = models.ImageField(
-        upload_to="products/photo",
+        upload_to="catalog/photo",
         blank=True,
         null=True,
         verbose_name="фото",
@@ -24,7 +24,7 @@ class Product(models.Model):
         help_text="Введите категорию продукта",
         blank=True,
         null=True,
-        related_name="products",
+        related_name="catalog",
     )
     price = models.FloatField(verbose_name="Цена", help_text="Введите цену продукта")
     created_at = models.DateTimeField(auto_now_add=True)

@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name="product",
+            model_name="catalog",
             name="manufactured_at",
             field=models.DateTimeField(auto_now=True),
         ),

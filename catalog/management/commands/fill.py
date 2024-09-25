@@ -34,7 +34,7 @@ class Command(BaseCommand):
         Category.objects.bulk_create(category_for_create)
 
         for d_dict in deserialized_json_data:
-            if d_dict["model"] == "catalog.product":
+            if d_dict["model"] == "catalog.catalog":
                 product_for_create.append(
                     Product(
                         pk=d_dict["pk"],
