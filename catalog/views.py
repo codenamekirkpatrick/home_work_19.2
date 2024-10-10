@@ -1,3 +1,5 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from catalog.models import Product, Version
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -33,16 +35,25 @@ class ProductDetailView(DetailView):
     model = Product
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
-    # fields = ('name', 'description', 'image', 'category', 'price')
     form_class = ProductForm
     success_url = reverse_lazy('catalog:product_list')
 
 
-class ProductUpdateView(UpdateView):
+    def form_valid(self, form):
+        """
+        Автоматическая привязка пользователя к продукту
+        """
+        product = form.save()
+        user = self.request.user
+        product.owner = user
+        product.save()
+        return super().form_valid(form)
+
+
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
-    # fields = ('name', 'description', 'image', 'category', 'price')
     form_class = ProductForm
     success_url = reverse_lazy('catalog:product_list')
 
@@ -68,6 +79,8 @@ class ProductUpdateView(UpdateView):
                 return self.render_to_response(self.get_context_data(form=form, formset=formset))
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:product_list')
+
+

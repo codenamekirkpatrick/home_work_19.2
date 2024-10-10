@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 class Product(models.Model):
     name = models.CharField(
@@ -33,6 +35,14 @@ class Product(models.Model):
     is_published = models.BooleanField(
         default=True,
         verbose_name='Опубликовано'
+    )
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        verbose_name="Владелец",
+        help_text="Укажите владельца",
+        blank=True,
+        null=True,
     )
 
     def __str__(self):
