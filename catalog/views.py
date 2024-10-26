@@ -1,12 +1,15 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
 from django.forms import inlineformset_factory
+
+from catalog.services import get_categories_from_cache
+
 
 class HomePageView(TemplateView):
     template_name = "catalog/home.html"
@@ -95,4 +98,8 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:product_list')
 
+class CategoryListView(ListView):
+    model = Category
 
+    def get_queryset(self):
+        return get_categories_from_cache()
